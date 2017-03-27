@@ -68,7 +68,7 @@ for d in dbs:
     print '[S3] Clearing previous database dump ' + file + '...'
 
     # Remove files older than last_backup_date
-    for ekey in mbucket.list():
+    for ekey in bucket.list():
         key_modified_date = datetime.datetime.fromtimestamp(mktime(time.strptime(ekey.last_modified[:19], "%Y-%m-%dT%H:%M:%S"))).date()
         if key_modified_date < last_backup_date:
             ekey.delete()
