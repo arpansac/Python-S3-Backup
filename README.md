@@ -22,6 +22,7 @@ The script requires the following configuration parameters
 * Access Key - _aws_access_key_
 * Secret Key - _aws_secret_key_
 * Bucket - _aws_bucket_
+* Host Region - _aws_host_region_
 
 **MySQL**
 
@@ -30,16 +31,7 @@ The script requires the following configuration parameters
 * Password - _mysql_password_
 * MySQL Dump Path - _mysql_dump_path_
 
-**Directories**
 
-You can backup as many directories as you like. Simply define it as a list and include the full path, e.g.
-
-```
-dirs = [
-        '/srv/www/domain1.com',
-        '/srv/www/domain2.com'
-        ]
-```
 
 **Databases**
 
@@ -54,6 +46,13 @@ dbs = [
 
 Crontab
 -------
+
+Use Ubuntu built in crontab to schedule your jobs
+
+```
+crontab -e
+```
+
 
 Sample cron to run backup every day at 23.00.
 
